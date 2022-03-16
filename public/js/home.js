@@ -133,17 +133,20 @@ function getCashOut(){
 
     document.getElementById("total").innerHTML = `R$ ${totaltoFixed(2)}`
 
-function getTotal(){
-    const transactions = data.transactions;
-    let total = 0;
-
-    transactions.forEach((item) => {
-        if(item.tyoe === "1") {
-            total += item.value;
-        } else {
-            total -= item.value; }
-    }
-});
+    function getTotal() {
+        const transactions = data.transactions
+        let total = 0
+      
+        transactions.forEach(item => {
+          if (item.type === '1') {
+            total += item.value
+          } else {
+            total -= item.value
+          }
+        })
+      
+        document.getElementById('total').innerHTML = `R$ ${total.toFixed(2)}`
+      }
 
 
 function saveDate(data){
